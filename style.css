@@ -213,6 +213,9 @@ p {
     .grid-item {
         width: auto;
     }
+    #grid1 {
+        background-position: top 0 right 2em;
+    }
 }
 
 @media screen and (max-width: 560px) {
