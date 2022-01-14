@@ -1,60 +1,112 @@
-* {}
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+:root {
+    --colorViolet: hsl(263, 55%, 52%);
+    --colorGrey: hsl(217, 19%, 35%);
+    --colorDark: hsl(219, 29%, 14%);
+    --profileColor: hsl(0, 0%, 81%);
+}
 
 body {
     background-color: #EDF2F8;
     margin: 0;
     padding: 0;
+    font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
 h2,
-h5 {
-    font-weight: bold;
+h3,
+h5,
+h6 {
+    font-weight: 600;
+}
+
+p {
+    opacity: .7;
+    font-weight: 500;
+    margin-top: 2em;
+    font-size: 13px;
+    padding-right: 1em;
 }
 
 .grid-container {
-    width: 1100px;
-    margin: 13vh auto;
+    width: 1200px;
+    margin: 16vh auto 10vh;
+    display: flex;
+    grid-gap: 15px;
+}
+
+.other-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-gap: 10px;
+    width: 900px;
+    grid-gap: 20px;
+}
+
+.last-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 300px;
 }
 
 .grid-item {
     border-radius: 10px;
     margin: 5px;
     padding: 10px 30px;
-    box-shadow: 16px 42px 17px -4px rgba(0, 0, 0, 0.17);
-    -webkit-box-shadow: 16px 42px 17px -4px rgba(0, 0, 0, 0.17);
-    -moz-box-shadow: 16px 42px 17px -4px rgba(0, 0, 0, 0.17);
+    line-height: 1.3;
 }
 
 #grid1 {
+    background-image: url(./images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: top 0 right 7.8em;
     grid-column: span 2;
-    background-color: #733FC8;
+    background-color: var(--colorViolet);
     color: #fff;
 }
 
 #grid2 {
-    background-color: #49556B;
+    background-color: var(--colorGrey);
     color: #fff;
 }
 
 #grid3 {
-    grid-row: span 2;
     background-color: #fff;
-    color: #49556B;
+    color: var(--colorGrey);
+    box-shadow: 15px 17px 16px -1px rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 15px 17px 16px -1px rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 15px 17px 16px -1px rgba(0, 0, 0, 0.12);
 }
 
 #grid4 {
-    background-color: #fff;
-    color: #49556B;
+    grid-column: span 2;
+    background-color: var(--colorDark);
+    color: #fff;
 }
 
 #grid5 {
-    grid-column: span 2;
-    background-color: #18202d;
-    color: #fff;
+    background-color: #fff;
+    color: var(--colorGrey);
+    grid-row: span 2;
+    box-shadow: 15px 17px 16px -1px rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 15px 17px 16px -1px rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 15px 17px 16px -1px rgba(0, 0, 0, 0.12);
+}
+
+#grid3 h3 {
+    padding-right: 2em;
+}
+
+#grid1,
+#grid4 {
+    width: 32em;
+}
+
+#grid2,
+#grid3,
+#grid5 {
+    width: 13em;
 }
 
 .profile {
@@ -65,15 +117,28 @@ h5 {
 
 .profile h6 {
     margin-top: -5px;
-    opacity: 50%;
+    opacity: .5;
 }
 
 .profile img {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    border: 2px solid #fff;
     margin-top: 15px;
+}
+
+#profile1,
+#profile4 {
+    border: 2px solid #A876F3;
+}
+
+#profile2 {
+    border: 2px solid var(--colorGrey);
+}
+
+#profile3,
+#profile5 {
+    border: 2px solid #FFF;
 }
 
 .profile-name {
@@ -81,17 +146,45 @@ h5 {
     line-height: 0;
 }
 
+#name1,
+#name2,
+#name4 {
+    color: var(--profileColor);
+}
+
+#name3,
+#name5 {
+    color: var(--colorGrey);
+}
+
 @media screen and (max-width: 1200px) {
     .grid-container {
-        margin: 8vh auto;
-        width: 950px;
+        margin: 8vh 3vw;
+        width: auto;
+        justify-content: center;
+    }
+    .other-container {
+        display: grid;
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        width: auto;
+        grid-gap: 20px;
+    }
+    .last-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        width: auto;
+    }
+    #grid1 {
+        background-position: top 0 right 5em;
     }
 }
 
 @media screen and (max-width: 1000px) {
     .grid-container {
-        width: 750px;
+        width: auto;
+        margin: 8vh 3vw;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -99,13 +192,31 @@ h5 {
     .grid-item {
         width: 600px;
     }
+    #grid1,
+    #grid2,
+    #grid3,
+    #grid4,
+    #grid5 {
+        width: auto;
+    }
 }
 
 @media screen and (max-width: 750px) {
     .grid-container {
-        width: 550px;
+        margin: 7vh 3vw;
+        width: auto;
+    }
+    .other-container {
+        display: flex;
+        flex-wrap: wrap;
     }
     .grid-item {
-        width: 400px;
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .grid-container {
+        margin: 6vh 3vw;
     }
 }
