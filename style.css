@@ -60,7 +60,7 @@ p {
 #grid1 {
     background-image: url(./images/bg-pattern-quotation.svg);
     background-repeat: no-repeat;
-    background-position: top 0 right 7.8em;
+    background-position: top 0 right 6em;
     grid-column: span 2;
     background-color: var(--colorViolet);
     color: #fff;
